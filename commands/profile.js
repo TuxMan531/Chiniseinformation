@@ -17,8 +17,9 @@ module.exports = {
         context.fillStyle = 'white';
         context.fillText(`Username: ${interaction.user.username}`, 100, 100);
         context.fillText(`Display Name: ${interaction.user.displayName}`, 100, 200);
-
-        const pfp = await loadImage('https://cdn.discordapp.com/avatars/309429229458685962/4e2af354f31be18c2048600ac5762e6b.webp?size=1024&width=0&height=281', 500, 500);
+        //pfp image
+        const pfp = await loadImage('./pfpf.png');
+        context.drawImage(pfp, (1920 - 556), 0,);
 
         const attachment = new AttachmentBuilder(canvas.toBuffer('image/png'), { name: 'profile-image.png' });
         console.log(interaction.user)
