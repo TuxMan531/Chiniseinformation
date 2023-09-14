@@ -6,7 +6,7 @@ const { join } = require('path');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('profile')
-		.setDescription('gets users profile'),
+		.setDescription('kinda gets users profile'),
 	async execute(interaction) {
 
         const canvas = createCanvas(1920, 1080);
@@ -19,7 +19,7 @@ module.exports = {
         const background = await loadImage('./background.jpg');
         context.drawImage(background, 0, 0, canvas.width, canvas.height);
         // the text
-        context.font = '100px Minecraft, Arial';
+        context.font = '100px Minecraft, Old English Text MT, Arial';
         context.fillStyle = 'white';
         context.fillText(`Username: ${interaction.user.username}`, 100, 100);
         context.fillText(`Display Name: ${interaction.user.displayName}`, 100, 200);
