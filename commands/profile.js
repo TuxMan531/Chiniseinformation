@@ -1,5 +1,6 @@
 const { SlashCommandBuilder, AttachmentBuilder } = require('discord.js');
-const { createCanvas, loadImage } = require('@napi-rs/canvas');
+const { createCanvas, loadImage,} = require('@napi-rs/canvas');
+const { request } = require('undici');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -18,8 +19,11 @@ module.exports = {
         context.fillText(`Username: ${interaction.user.username}`, 100, 100);
         context.fillText(`Display Name: ${interaction.user.displayName}`, 100, 200);
         //pfp image
-        const pfp = await loadImage('./pfpf.png');
-        context.drawImage(pfp, (1920 - 556), 0,);
+        //const pfp = await loadImage('./pfpf.png');
+        //context.drawImage(pfp, (1920 - 556), 0,);
+        const { body } = await request(interaction.user.displayAvatarURL({ extension: 'jpg' }));
+	const avatar = await loadImage(await body.arrayBuffer());
+        context.drawImage(avatar, 0, 0,);
 
         const attachment = new AttachmentBuilder(canvas.toBuffer('image/png'), { name: 'profile-image.png' });
         console.log(interaction.user)
