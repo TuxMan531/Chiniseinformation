@@ -19,11 +19,15 @@ module.exports = {
         const background = await loadImage('./background.jpg');
         context.drawImage(background, 0, 0, canvas.width, canvas.height);
         // the text
+        //tittle
         context.font = '100px Minecraft, Old English Text MT, Arial';
         context.fillStyle = 'white';
-        context.fillText(`Username: ${interaction.user.username}`, 100, 100);
-        context.fillText(`Display Name: ${interaction.user.displayName}`, 100, 200);
-        context.fillText(`Nickname: ${interaction.member.nickname}`, 100, 300);
+        context.fillText('Your Profile', 650, 100);
+        // variables
+        context.fillText(`Username: ${interaction.user.username}`, 100, 250);
+        context.fillText(`Display Name: ${interaction.user.displayName}`, 100, 350);
+        context.fillText(`Nickname: ${interaction.member.nickname}`, 100, 450);
+
         
         //pfp image
         //const pfp = await loadImage('./pfpf.png');
