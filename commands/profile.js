@@ -20,13 +20,19 @@ module.exports = {
         context.drawImage(background, 0, 0, canvas.width, canvas.height);
         // the text
         //tittle
-        context.font = '100px Minecraft, Old English Text MT, Arial';
+        context.font = '100px Nabla';
         context.fillStyle = 'white';
         context.fillText('Your Profile', 650, 100);
         // variables
+        context.font = '100px Minecraft, Arial';
         context.fillText(`Username: ${interaction.user.username}`, 100, 250);
         context.fillText(`Display Name: ${interaction.user.displayName}`, 100, 350);
         context.fillText(`Nickname: ${interaction.member.nickname}`, 100, 450);
+        //barcodefont
+        
+        context.font = '100px Libre Barcode 39, Arial'
+        context.fillText(`${interaction.user.username}`, ((1920/2) - 365), 980)
+        context.fil
 
         
         //pfp image
@@ -46,7 +52,7 @@ module.exports = {
 
 
 
-        );
+          );
 	},
 };
 
