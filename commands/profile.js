@@ -16,7 +16,7 @@ module.exports = {
         console.log(GlobalFonts.families)
 
         // load and draw background
-        const background = await loadImage('./background.jpg');
+        const background = await loadImage('./image11.jpg');
         context.drawImage(background, 0, 0, canvas.width, canvas.height);
         // the text
         //tittle
@@ -31,7 +31,7 @@ module.exports = {
         //barcodefont
         
         context.font = '100px Libre Barcode 39, Arial'
-        context.fillText(`${interaction.user.username}`, ((1920/2) - 365), 980)
+        context.fillText(`${interaction.user.username}`, (1920/2), 980)
         context.fil
 
         
